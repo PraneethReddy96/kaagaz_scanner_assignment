@@ -4,6 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/bg_button_round.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_arrow_back.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_delete.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_edit.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_flash_auto.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_flash_off.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_flash_on.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_grid_off.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_grid_on.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_hdr_off.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_hdr_on.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_no_picture.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_outline_camera_enhance.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_outline_camera_front.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_outline_camera_rear.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_play.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_share.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_take_picture.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_10.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_3.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_off.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
