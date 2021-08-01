@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val homeFragment = HomeFragment()
+        replaceFragment(homeFragment)
         bottomNavigationView.add(MeowBottomNavigation.Model(1, R.drawable.ic_home))
         bottomNavigationView.add(MeowBottomNavigation.Model(2, R.drawable.ic_cam_normal))
 
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(homeFragment)
 
                 }
-                2->{
+                2 -> {
                     val cameraFragment = CameraFragment()
                     replaceFragment(cameraFragment)
                 }
@@ -71,8 +73,8 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransition = supportFragmentManager.beginTransaction()
 
 
-        fragmentTransition.replace(R.id.flContainer, fragment).addToBackStack("fragment")
-                .commit()
+        fragmentTransition.replace(R.id.flContainer, fragment, "fragment")
+            .commit()
 
 
     }

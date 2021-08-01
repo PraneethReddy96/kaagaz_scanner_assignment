@@ -146,9 +146,9 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
         ContextCompat.checkSelfPermission(
             requireContext(), it) == PackageManager.PERMISSION_GRANTED
     }
-
+//
 //    private fun getOutputDirectory(): File {
-//        val mediaDir = (MainActivity)externalMediaDirs.firstOrNull()?.let {
+//        val mediaDir = externalMediaDirs.firstOrNull()?.let {
 //            File(it, resources.getString(R.string.app_name)).apply { mkdirs() } }
 //        return if (mediaDir != null && mediaDir.exists())
 //            mediaDir else filesDir
