@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/bg_button_round.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/camera.xml" value="0.16614583333333333" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/camera2.xml" value="0.16614583333333333" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/child2.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_arrow_back.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.262037037037037" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_delete.xml" value="0.21354166666666666" />
@@ -16,6 +19,8 @@
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_grid_on.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_hdr_off.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_hdr_on.xml" value="0.21354166666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_home.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_icons8_home.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_no_picture.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_outline_camera_enhance.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_outline_camera_front.xml" value="0.21354166666666666" />
@@ -26,11 +31,14 @@
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_10.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_3.xml" value="0.21354166666666666" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/drawable/ic_timer_off.xml" value="0.21354166666666666" />
-        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout-land/fragment_camera.xml" value="0.18077601410934743" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/activity_main.xml" value="0.10038610038610038" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/folders_item_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/fragment_camera.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/fragment_preview.xml" value="0.176" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/layout/item_picture.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/menu/menu.xml" value="0.15989583333333332" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/dines/Desktop/kaagaz_scanner/kaagaz_scanner_assignment/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
