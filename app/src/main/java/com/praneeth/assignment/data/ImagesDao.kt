@@ -29,4 +29,9 @@ interface ImagesDao {
     @Query(value = "Select * from ImageTable WHERE album like :searchTerm")
     fun getElements(searchTerm :String) : LiveData<List<ImagesEntity>>
 
+
+ @Query(value ="select * from ImageTable")
+ fun getAllData(): LiveData<List<ImagesEntity>>
+
+
 }

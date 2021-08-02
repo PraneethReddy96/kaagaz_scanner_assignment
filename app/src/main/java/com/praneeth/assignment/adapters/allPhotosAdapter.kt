@@ -5,33 +5,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.praneeth.assignment.R
 import com.praneeth.assignment.data.ImagesEntity
 import com.praneeth.assignment.utils.onImageClicked
 
-class previewAdapter(val dataList: MutableList<ImagesEntity>, val onImageClicked: onImageClicked) : RecyclerView.Adapter<previewViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): previewViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.preview_item_layout,parent,false)
-        return previewViewHolder(view)
+class allPhotosAdapter(val dataList: MutableList<ImagesEntity>, val onImageClicked: onImageClicked) :
+    RecyclerView.Adapter<allPhotosViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): allPhotosViewHolder {
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.all_photos_item_layout, parent, false)
+        return allPhotosViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: previewViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: allPhotosViewHolder, position: Int) {
 
 
         holder.image.load(Uri.parse(dataList[position].image))
 
         holder.image.setOnClickListener(View.OnClickListener {
 
-
             onImageClicked.getUri(Uri.parse(dataList[position].image))
 
-
-
         })
-
-
 
     }
 
@@ -40,12 +38,10 @@ class previewAdapter(val dataList: MutableList<ImagesEntity>, val onImageClicked
     }
 }
 
-class previewViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class allPhotosViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
 
     var image = view.findViewById<ImageView>(R.id.ivPreviewImage)
-
-
 
 
 }

@@ -43,6 +43,10 @@ class MyViewModel(val repository: Repository) : ViewModel() {
     }
 
 
+    fun getAllImages(): LiveData<List<ImagesEntity>>{
+
+        return repository.getAllImages()
+    }
 
 
 

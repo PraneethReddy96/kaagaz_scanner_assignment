@@ -3,14 +3,14 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/llFolderContainer"
+    android:id="@+id/llAllImagesContainer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
     <ImageView
-        android:id="@+id/ivPreviewImage"
+        android:id="@+id/ivAllImages"
         android:layout_width="@dimen/dp_150"
         android:layout_height="@dimen/dp_175"
         android:scaleType="fitXY"

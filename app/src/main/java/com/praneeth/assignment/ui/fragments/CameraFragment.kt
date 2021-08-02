@@ -1,8 +1,7 @@
-package com.praneeth.assignment.fragments
+package com.praneeth.assignment.ui.fragments
 
 
 import android.Manifest
-import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -18,7 +17,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.praneeth.assignment.MainActivity
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.praneeth.assignment.R
 import com.praneeth.assignment.data.ImagesDao
 import com.praneeth.assignment.data.ImagesRoomDataBase
@@ -40,6 +40,7 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
     lateinit var imagesDb : ImagesRoomDataBase
     lateinit var imagesDao : ImagesDao
     private var imageCapture: ImageCapture? = null
+    lateinit var navController: NavController
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
 
@@ -63,6 +64,15 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
         cameraExecutor = Executors.newSingleThreadExecutor()
 
         initViews()
+
+
+        navController = Navigation.findNavController(view)
+        btnGallery.setOnClickListener(View.OnClickListener {
+
+
+            navController.navigate(R.id.action_cameraFragment_to_previewFragment)
+
+        })
 
     }
 

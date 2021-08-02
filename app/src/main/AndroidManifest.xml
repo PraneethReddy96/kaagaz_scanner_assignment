@@ -21,10 +21,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KaagazScannerAssigment">
         <activity
-            android:name=".PreviewActivity"
+            android:name=".ui.FullViewActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.PreviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

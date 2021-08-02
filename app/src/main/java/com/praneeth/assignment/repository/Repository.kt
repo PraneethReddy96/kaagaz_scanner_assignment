@@ -2,14 +2,9 @@ package com.praneeth.assignment.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
 import com.praneeth.assignment.data.AlbumEntity
-import com.praneeth.assignment.data.Display
 import com.praneeth.assignment.data.ImagesDao
 import com.praneeth.assignment.data.ImagesEntity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class Repository(val imagesDao: ImagesDao) {
 
@@ -80,6 +75,14 @@ class Repository(val imagesDao: ImagesDao) {
     fun displaySelectedItem(name :String): LiveData<List<ImagesEntity>>{
 
         return imagesDao.getElements(name)
+
+    }
+
+
+
+    fun getAllImages(): LiveData<List<ImagesEntity>>{
+
+        return  imagesDao.getAllData()
 
     }
 
