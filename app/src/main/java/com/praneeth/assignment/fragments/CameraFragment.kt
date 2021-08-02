@@ -17,8 +17,14 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.praneeth.assignment.MainActivity
 import com.praneeth.assignment.R
+import com.praneeth.assignment.data.ImagesDao
+import com.praneeth.assignment.data.ImagesRoomDataBase
+import com.praneeth.assignment.repository.Repository
+import com.praneeth.assignment.viewmodels.MyViewModel
+import com.praneeth.assignment.viewmodels.MyViewModelFactory
 import kotlinx.android.synthetic.main.fragment_camera.*
 import java.io.File
 import java.lang.System.currentTimeMillis
@@ -30,7 +36,9 @@ import java.util.concurrent.Executors
 
 class CameraFragment : Fragment(R.layout.fragment_camera) {
 
-
+    lateinit var viewModel : MyViewModel
+    lateinit var imagesDb : ImagesRoomDataBase
+    lateinit var imagesDao : ImagesDao
     private var imageCapture: ImageCapture? = null
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
@@ -54,6 +62,17 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
+        initViews()
+
+    }
+
+    private fun initViews() {
+
+        imagesDb= ImagesRoomDataBase.getImageDataBase(this.requireContext())
+        imagesDao = imagesDb.getImagesDao()
+        val repository = Repository(imagesDao)
+        val viewModelFactory = MyViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MyViewModel::class.java)
 
     }
 
@@ -85,6 +104,9 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
                     val msg = "Photo capture succeeded: $savedUri"
                     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
+
+                    viewModel.saveData(System.currentTimeMillis(),savedUri.toString())
+
                 }
             })
     }

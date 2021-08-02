@@ -1,40 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="@dimen/dp_10"
-    android:layout_height="wrap_content">
+
 
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/llFolderContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
         <ImageView
-            android:layout_width="@dimen/dp_100"
-            android:layout_height="@dimen/dp_100"
-            android:layout_marginRight="@dimen/dp_20"
-            android:layout_marginLeft="@dimen/dp_20"
-            android:layout_marginTop="@dimen/dp_20"
-            android:src="@drawable/folder"/>
+            android:id="@+id/ivAlbumImage"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_175"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_20"
+            android:src="@drawable/folder" />
 
         <TextView
             android:id="@+id/tvFolderName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="folder 1"
-            android:textSize="@dimen/sp_16"
             android:padding="@dimen/dp_5"
-            android:textAlignment="center"/>
-
-
+            android:text="folder 1"
+            android:textAlignment="center"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>

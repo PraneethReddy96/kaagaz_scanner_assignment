@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".MainActivity">
 
 
     <RelativeLayout
@@ -28,7 +28,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFoldersRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/tvMyFolders"
             android:layout_marginTop="@dimen/dp_20" />
 

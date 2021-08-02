@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [ImagesEntity::class], version = 1)
+@Database(entities = [ImagesEntity::class, AlbumEntity::class], version = 2)
 abstract class ImagesRoomDataBase : RoomDatabase() {
 
 
