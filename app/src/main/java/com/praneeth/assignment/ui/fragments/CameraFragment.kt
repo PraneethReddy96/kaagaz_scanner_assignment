@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -43,6 +44,8 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
     lateinit var navController: NavController
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var btnGallery : ImageButton
+    private lateinit var btnTakePicture  : ImageButton
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,7 +58,7 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
             ActivityCompat.requestPermissions(
                 requireActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
-
+        initViews(view)
         // Set up the listener for take photo button
         btnTakePicture.setOnClickListener { takePhoto() }
 
@@ -63,7 +66,7 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        initViews()
+
 
 
         navController = Navigation.findNavController(view)
@@ -76,8 +79,10 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
 
     }
 
-    private fun initViews() {
+    private fun initViews(view:View) {
 
+        btnGallery= view.findViewById(R.id.btnGallery)
+        btnTakePicture= view.findViewById(R.id.btnTakePicture)
         imagesDb= ImagesRoomDataBase.getImageDataBase(this.requireContext())
         imagesDao = imagesDb.getImagesDao()
         val repository = Repository(imagesDao)
@@ -112,7 +117,7 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val savedUri = Uri.fromFile(photoFile)
                     val msg = "Photo capture succeeded: $savedUri"
-                    Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),"Image captured", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
 
                     viewModel.saveData(System.currentTimeMillis(),savedUri.toString())
@@ -181,7 +186,8 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
         private const val TAG = "CameraXBasic"
         private const val FILENAME_FORMAT = "yyyy-MM-dd  HH-mm-ss  SSS"
         private const val REQUEST_CODE_PERMISSIONS = 10
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA,
+            Manifest.permission.READ_EXTERNAL_STORAGE)
     }
 
     override fun onRequestPermissionsResult(

@@ -8,7 +8,6 @@ import com.praneeth.assignment.data.ImagesEntity
 
 class Repository(val imagesDao: ImagesDao) {
 
-    var displayList = mutableListOf<Display>()
 
     companion object {
 
@@ -21,13 +20,10 @@ class Repository(val imagesDao: ImagesDao) {
 
 
             val imagesEntity = ImagesEntity(uri, time, "Album" + " " + "$key", key)
-
             imagesDao.insertData(imagesEntity)
 
-            displayList.add(Display("Album" + " " + "$key", uri))
 
             var albumEntity = AlbumEntity(uri, "Album" + " " + "$key")
-
             imagesDao.insertAlbums(albumEntity)
 
 

@@ -1,9 +1,10 @@
 package com.praneeth.assignment.utils
 
 import android.net.Uri
+import com.praneeth.assignment.data.ImagesEntity
 
 interface onImageClicked {
 
-    fun getUri(uri: Uri)
+    fun getUri(imagesEntity: ImagesEntity)
 
 }

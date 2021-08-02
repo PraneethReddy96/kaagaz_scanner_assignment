@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,11 +27,13 @@ class PreviewActivity : AppCompatActivity(),onImageClicked {
     lateinit var imagesDao: ImagesDao
     var dataList = mutableListOf<ImagesEntity>()
     lateinit var previewAdapter: previewAdapter
+    lateinit var tvMyFolderName :TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preview)
 
+        tvMyFolderName= findViewById(R.id.tvMyFolderName)
         var searchText = intent.getStringExtra("name")
         tvMyFolderName.text =searchText
 
@@ -65,8 +68,9 @@ class PreviewActivity : AppCompatActivity(),onImageClicked {
 
     }
 
-    override fun getUri(uri: Uri) {
+    override fun getUri(imagesEntity: ImagesEntity) {
 
+        var uri = imagesEntity.image
         val intent = Intent(this, FullViewActivity::class.java)
         intent.putExtra("uri",uri)
         startActivity(intent)

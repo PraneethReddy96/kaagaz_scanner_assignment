@@ -7,6 +7,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.praneeth.assignment.ui.PreviewActivity
 import com.praneeth.assignment.R
 import com.praneeth.assignment.adapters.albumsAdapter
@@ -27,6 +28,7 @@ class HomeFragment : Fragment(R.layout.fragment_home),onItemClicked {
     lateinit var imagesDao: ImagesDao
     var dataList = mutableListOf<AlbumEntity>()
     lateinit var albumsAdapter: albumsAdapter
+    lateinit var rvFoldersRecyclerView: RecyclerView
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,6 +41,8 @@ class HomeFragment : Fragment(R.layout.fragment_home),onItemClicked {
         val viewModelFactory = MyViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MyViewModel::class.java)
 
+
+        rvFoldersRecyclerView= view.findViewById(R.id.rvFoldersRecyclerView)
 
         val llManager = GridLayoutManager(requireContext(), 2)
         albumsAdapter = albumsAdapter(dataList,this)

@@ -8,6 +8,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.praneeth.assignment.ui.FullViewActivity
 import com.praneeth.assignment.R
 import com.praneeth.assignment.adapters.allPhotosAdapter
@@ -28,6 +29,7 @@ class PreviewFragment() : Fragment(R.layout.fragment_preview), onImageClicked {
     lateinit var imagesDao: ImagesDao
     var dataList = mutableListOf<ImagesEntity>()
     lateinit var allPhotosAdapter: allPhotosAdapter
+    lateinit var rvAllPhotosRecyclerView : RecyclerView
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +44,7 @@ class PreviewFragment() : Fragment(R.layout.fragment_preview), onImageClicked {
 
 
 
-
+        rvAllPhotosRecyclerView= view.findViewById(R.id.rvAllPhotosRecyclerView)
 
         val llManager = GridLayoutManager(requireContext(), 2)
         allPhotosAdapter =allPhotosAdapter(dataList, this)
@@ -64,8 +66,9 @@ class PreviewFragment() : Fragment(R.layout.fragment_preview), onImageClicked {
 
     }
 
-    override fun getUri(uri: Uri) {
+    override fun getUri(imagesEntity: ImagesEntity) {
 
+        var uri = imagesEntity.image
         val intent = Intent(requireContext(), FullViewActivity::class.java)
         intent.putExtra("uri",uri)
         startActivity(intent)

@@ -27,7 +27,7 @@ class allPhotosAdapter(val dataList: MutableList<ImagesEntity>, val onImageClick
 
         holder.image.setOnClickListener(View.OnClickListener {
 
-            onImageClicked.getUri(Uri.parse(dataList[position].image))
+            onImageClicked.getUri(dataList[position])
 
         })
 
@@ -41,7 +41,7 @@ class allPhotosAdapter(val dataList: MutableList<ImagesEntity>, val onImageClick
 class allPhotosViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
 
-    var image = view.findViewById<ImageView>(R.id.ivPreviewImage)
+    var image = view.findViewById<ImageView>(R.id.ivAllImages)
 
 
 }

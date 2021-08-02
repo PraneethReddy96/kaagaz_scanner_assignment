@@ -20,6 +20,7 @@
             android:layout_marginLeft="@dimen/dp_40"
             android:layout_marginTop="@dimen/dp_40"
             android:layout_marginRight="@dimen/dp_40"
+            android:textColor="@color/black"
             android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
             android:text="@string/my_folders"
             android:textSize="@dimen/sp_28"

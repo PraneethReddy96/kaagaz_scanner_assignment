@@ -25,7 +25,7 @@ class previewAdapter(val dataList: MutableList<ImagesEntity>, val onImageClicked
         holder.image.setOnClickListener(View.OnClickListener {
 
 
-            onImageClicked.getUri(Uri.parse(dataList[position].image))
+            onImageClicked.getUri(dataList[position])
 
 
 

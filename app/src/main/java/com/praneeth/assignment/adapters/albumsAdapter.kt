@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.fetch.VideoFrameUriFetcher
 import coil.load
-import com.bumptech.glide.Glide
 import com.praneeth.assignment.R
 import com.praneeth.assignment.data.AlbumEntity
 import com.praneeth.assignment.utils.onItemClicked
