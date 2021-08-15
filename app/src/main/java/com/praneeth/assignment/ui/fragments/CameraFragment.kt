@@ -23,6 +23,7 @@ import androidx.navigation.Navigation
 import com.praneeth.assignment.R
 import com.praneeth.assignment.data.ImagesDao
 import com.praneeth.assignment.data.ImagesRoomDataBase
+import com.praneeth.assignment.databinding.FragmentCameraBinding
 import com.praneeth.assignment.repository.Repository
 import com.praneeth.assignment.viewmodels.MyViewModel
 import com.praneeth.assignment.viewmodels.MyViewModelFactory
@@ -44,12 +45,11 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
     lateinit var navController: NavController
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
-    private lateinit var btnGallery : ImageButton
-    private lateinit var btnTakePicture  : ImageButton
+    private lateinit var binding: FragmentCameraBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding= FragmentCameraBinding.bind(view)
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -58,19 +58,19 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
             ActivityCompat.requestPermissions(
                 requireActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
-        initViews(view)
+
         // Set up the listener for take photo button
-        btnTakePicture.setOnClickListener { takePhoto() }
+        binding.btnTakePicture.setOnClickListener { takePhoto() }
 
         outputDirectory = getOutputDirectory()
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
 
-
+        initViews(view)
 
         navController = Navigation.findNavController(view)
-        btnGallery.setOnClickListener(View.OnClickListener {
+        binding.btnGallery.setOnClickListener(View.OnClickListener {
 
 
             navController.navigate(R.id.action_cameraFragment_to_previewFragment)
@@ -81,8 +81,6 @@ class CameraFragment : Fragment(R.layout.fragment_camera) {
 
     private fun initViews(view:View) {
 
-        btnGallery= view.findViewById(R.id.btnGallery)
-        btnTakePicture= view.findViewById(R.id.btnTakePicture)
         imagesDb= ImagesRoomDataBase.getImageDataBase(this.requireContext())
         imagesDao = imagesDb.getImagesDao()
         val repository = Repository(imagesDao)

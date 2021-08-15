@@ -5,21 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.praneeth.assignment.R
+import com.praneeth.assignment.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var bottomNavigationView: BottomNavigationView
+
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        bottomNavigationView= findViewById(R.id.bottomNavigationView)
-
-        bottomNavigationView.setupWithNavController(nav_host_fragment.findNavController())
+        binding.bottomNavigationView.setupWithNavController(nav_host_fragment.findNavController())
 
     }
 

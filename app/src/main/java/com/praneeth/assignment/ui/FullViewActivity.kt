@@ -2,21 +2,19 @@ package com.praneeth.assignment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import coil.load
-import com.praneeth.assignment.R
-import kotlinx.android.synthetic.main.activity_full_view.*
+import com.praneeth.assignment.databinding.ActivityFullViewBinding
 
 class FullViewActivity : AppCompatActivity() {
 
 
-    lateinit var ivFullImage :ImageView
+    lateinit var binding: ActivityFullViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_full_view)
+        binding = ActivityFullViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        ivFullImage = findViewById(R.id.ivFullImage)
         var uri = intent.getStringExtra("uri")
-        ivFullImage.load(uri)
+        binding.ivFullImage.load(uri)
     }
 }

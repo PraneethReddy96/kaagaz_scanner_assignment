@@ -9,34 +9,30 @@ import com.praneeth.assignment.data.ImagesEntity
 class Repository(val imagesDao: ImagesDao) {
 
 
-    companion object {
 
-        var key = 1
-    }
 
     suspend fun addData(time: Long, uri: String) {
 
         if (imagesDao.loadLastTask() == null) {
 
 
-            val imagesEntity = ImagesEntity(uri, time, "Album" + " " + "$key", key)
+            val imagesEntity = ImagesEntity(uri, time, "Album" + " " + 1, 1)
             imagesDao.insertData(imagesEntity)
 
 
-            var albumEntity = AlbumEntity(uri, "Album" + " " + "$key")
+            var albumEntity = AlbumEntity(uri, "Album" + " " + 1)
             imagesDao.insertAlbums(albumEntity)
 
 
         } else {
 
             val size = imagesDao.getData().size
-
-
             val previousTime = imagesDao.getData()[size-1].time
-            Log.d("size", previousTime.toString())
-            if (time - previousTime!! > 60000) {
+            var key= imagesDao.getData()[size-1].key
 
-                key = key + 1
+            if (time - previousTime!! > 30000) {
+
+                key = key?.plus(1)
 
                 val imagesEntity = ImagesEntity(uri, time, "Album" + " " + "$key", key)
                 imagesDao.insertData(imagesEntity)
@@ -44,9 +40,6 @@ class Repository(val imagesDao: ImagesDao) {
                 var albumEntity = AlbumEntity(uri, "Album" + " " + "$key")
 
                 imagesDao.insertAlbums(albumEntity)
-
-
-
 
             } else {
 

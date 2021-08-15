@@ -14,6 +14,7 @@ import com.praneeth.assignment.adapters.albumsAdapter
 import com.praneeth.assignment.data.AlbumEntity
 import com.praneeth.assignment.data.ImagesDao
 import com.praneeth.assignment.data.ImagesRoomDataBase
+import com.praneeth.assignment.databinding.FragmentHomeBinding
 import com.praneeth.assignment.repository.Repository
 import com.praneeth.assignment.utils.onItemClicked
 import com.praneeth.assignment.viewmodels.MyViewModel
@@ -28,11 +29,12 @@ class HomeFragment : Fragment(R.layout.fragment_home),onItemClicked {
     lateinit var imagesDao: ImagesDao
     var dataList = mutableListOf<AlbumEntity>()
     lateinit var albumsAdapter: albumsAdapter
-    lateinit var rvFoldersRecyclerView: RecyclerView
+    lateinit var binding: FragmentHomeBinding
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentHomeBinding.bind(view)
 
         imagesDb = ImagesRoomDataBase.getImageDataBase(this.requireContext())
         imagesDao = imagesDb.getImagesDao()
@@ -42,14 +44,11 @@ class HomeFragment : Fragment(R.layout.fragment_home),onItemClicked {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MyViewModel::class.java)
 
 
-        rvFoldersRecyclerView= view.findViewById(R.id.rvFoldersRecyclerView)
 
         val llManager = GridLayoutManager(requireContext(), 2)
         albumsAdapter = albumsAdapter(dataList,this)
-        rvFoldersRecyclerView.layoutManager = llManager
-        rvFoldersRecyclerView.adapter = albumsAdapter
-
-
+        binding.rvFoldersRecyclerView.layoutManager = llManager
+        binding.rvFoldersRecyclerView.adapter = albumsAdapter
 
 
         viewModel.displayAlbumsList().observe(requireActivity(), Observer {
@@ -60,14 +59,14 @@ class HomeFragment : Fragment(R.layout.fragment_home),onItemClicked {
 
 
             if (albumsAdapter.dataList.size == 0) {
-                rvFoldersRecyclerView?.visibility = View.GONE
-                tvNoFilesMessage?.visibility = View.VISIBLE
-                lottieAnimation.visibility = View.VISIBLE
+                binding.rvFoldersRecyclerView.visibility = View.GONE
+                binding.tvNoFilesMessage.visibility = View.VISIBLE
+                binding.lottieAnimation.visibility = View.VISIBLE
 
             } else {
-                rvFoldersRecyclerView?.visibility = View.VISIBLE
-                tvNoFilesMessage?.visibility = View.GONE
-                lottieAnimation?.visibility = View.GONE
+                binding.rvFoldersRecyclerView.visibility = View.VISIBLE
+                binding.tvNoFilesMessage.visibility = View.GONE
+                binding.lottieAnimation.visibility = View.GONE
             }
 
         })

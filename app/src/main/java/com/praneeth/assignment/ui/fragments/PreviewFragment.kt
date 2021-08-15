@@ -15,6 +15,7 @@ import com.praneeth.assignment.adapters.allPhotosAdapter
 import com.praneeth.assignment.data.ImagesDao
 import com.praneeth.assignment.data.ImagesEntity
 import com.praneeth.assignment.data.ImagesRoomDataBase
+import com.praneeth.assignment.databinding.FragmentPreviewBinding
 import com.praneeth.assignment.repository.Repository
 import com.praneeth.assignment.utils.onImageClicked
 import com.praneeth.assignment.viewmodels.MyViewModel
@@ -29,12 +30,12 @@ class PreviewFragment() : Fragment(R.layout.fragment_preview), onImageClicked {
     lateinit var imagesDao: ImagesDao
     var dataList = mutableListOf<ImagesEntity>()
     lateinit var allPhotosAdapter: allPhotosAdapter
-    lateinit var rvAllPhotosRecyclerView : RecyclerView
+    lateinit var binding: FragmentPreviewBinding
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding = FragmentPreviewBinding.bind(view)
 
         imagesDb = ImagesRoomDataBase.getImageDataBase(this.requireContext())
         imagesDao = imagesDb.getImagesDao()
@@ -43,34 +44,26 @@ class PreviewFragment() : Fragment(R.layout.fragment_preview), onImageClicked {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MyViewModel::class.java)
 
 
-
-        rvAllPhotosRecyclerView= view.findViewById(R.id.rvAllPhotosRecyclerView)
-
         val llManager = GridLayoutManager(requireContext(), 2)
-        allPhotosAdapter =allPhotosAdapter(dataList, this)
-        rvAllPhotosRecyclerView.layoutManager = llManager
-        rvAllPhotosRecyclerView.adapter = allPhotosAdapter
-
+        allPhotosAdapter = allPhotosAdapter(dataList, this)
+        binding.rvAllPhotosRecyclerView.layoutManager = llManager
+        binding.rvAllPhotosRecyclerView.adapter = allPhotosAdapter
 
 
         viewModel.getAllImages().observe(requireActivity(), Observer {
-
 
             dataList.clear()
             dataList.addAll(it)
             allPhotosAdapter.notifyDataSetChanged()
 
-
         })
-
-
     }
 
     override fun getUri(imagesEntity: ImagesEntity) {
 
         var uri = imagesEntity.image
         val intent = Intent(requireContext(), FullViewActivity::class.java)
-        intent.putExtra("uri",uri)
+        intent.putExtra("uri", uri)
         startActivity(intent)
 
     }
